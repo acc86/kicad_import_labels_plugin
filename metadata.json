@@ -18,7 +18,7 @@
     },
     "versions": [
         {
-            "version": "1.0.0",
+            "version": "1.0.1",
             "status": "stable",
             "kicad_version": "8.0",
             "download_url": "https://github.com/acc86/kicad_import_labels_plugin/releases/download/v1.0.0/kicad_import_labels_plugin.zip"
