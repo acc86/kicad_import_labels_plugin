@@ -1,0 +1,35 @@
+{
+    "$schema": "https://go.kicad.org/pcm/schemas/v1",
+    "packages": [
+        {
+            "identifier": "import-labels-plugin",
+            "name": "Import Labels Plugin",
+            "type": "plugin",
+            "description": "A plugin to import net, global, hierarchical, or text labels from a CSV or TXT file into KiCad schematics.",
+            "description_full": "The Import Labels Plugin for KiCad allows you to import net, global, hierarchical, or text labels directly from a CSV or TXT file into your schematics. It supports placing labels in a grid format, with options for choosing label types and handling duplicates. Ideal for automating schematic design and improving workflow efficiency.",
+            "author": {
+                "name": "Al Cole",
+                "contact": {
+                    "website": "https://github.com/acc86/kicad_import_labels_plugin"
+                }
+            },
+            "repository": {
+                "type": "git",
+                "url": "https://github.com/acc86/kicad_import_labels_plugin.git"
+            },
+            "license": "MIT",
+            "resources": {
+                "repository": "https://github.com/acc86/kicad_import_labels_plugin",
+                "documentation": "https://github.com/acc86/kicad_import_labels_plugin#readme"
+            },
+            "versions": [
+                {
+                    "version": "1.0.1",
+                    "status": "stable",
+                    "kicad_version": "8.0",
+                    "download_url": "https://github.com/acc86/kicad_import_labels_plugin/releases/download/v1.0.0/kicad_import_labels_plugin.zip"
+                }
+            ]
+        }
+    ]
+}
