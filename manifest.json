@@ -1,0 +1,36 @@
+{
+    "name": "Import Labels Plugin",
+    "version": "1.0.0",
+    "description": "A plugin to import net, global, hierarchical, or text labels from a CSV or TXT file into KiCad schematics.",
+    "author": "Al Cole",
+    "website": "https://github.com/acc86/kicad_import_labels_plugin",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/acc86/kicad_import_labels_plugin.git"
+    },
+    "license": "MIT",
+    "icon": "icon.png",
+    "kicad_version": "8.0",
+    "dependencies": [],
+    "platforms": [
+        {
+            "os": "linux",
+            "arch": "x86_64"
+        },
+        {
+            "os": "windows",
+            "arch": "x86_64"
+        },
+        {
+            "os": "macos",
+            "arch": "x86_64"
+        }
+    ],
+    "install_method": "copy",
+    "content": [
+        {
+            "source": "import_labels_plugin/",
+            "destination": "import_labels_plugin/"
+        }
+    ]
+}
