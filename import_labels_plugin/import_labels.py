@@ -1,18 +1,13 @@
-import pcbnew
 import wx
 import csv
+import eeschema
 
-class ImportNetLabels(pcbnew.ActionPlugin):
+class ImportNetLabels(eeschema.ActionPlugin):
     def __init__(self):
         super(ImportNetLabels, self).__init__()
-        self.name = "Import Net/Global/Hierarchical/Text Labels"
+        self.name = "Import Labels"
         self.category = "Schematic tools"
-        self.description = "Import labels from a CSV or TXT file and place them in a grid"
-
-    def defaults(self):
-        self.name = "Import Labels with Options"
-        self.category = "Label Tools"
-        self.description = "Import and place labels from a CSV or TXT file"
+        self.description = "Import net, global, hierarchical, or text labels from a CSV or TXT file"
 
     def Run(self):
         # Open a file dialog to choose the input file
@@ -37,7 +32,7 @@ class ImportNetLabels(pcbnew.ActionPlugin):
 
         # Create and place the labels in a grid layout
         self.create_labels_in_grid(label_type, labels)
-        pcbnew.Refresh()
+        eeschema.Refresh()
 
     def read_labels(self, file_path):
         labels = []
@@ -87,7 +82,7 @@ class ImportNetLabels(pcbnew.ActionPlugin):
         rows = 10  # Number of labels per row before wrapping to a new row
 
         # Get the current schematic sheet
-        sheet = pcbnew.GetCurrentSchematicSheet()
+        sheet = eeschema.GetCurrentSchematicSheet()
         if not sheet:
             print("No active schematic sheet found.")
             return
@@ -100,7 +95,7 @@ class ImportNetLabels(pcbnew.ActionPlugin):
             y_pos = (index // rows) * offset_y
 
             # Define the position for each label
-            position = pcbnew.wxPointMM(10 + x_pos, 10 + y_pos)
+            position = eeschema.wxPointMM(10 + x_pos, 10 + y_pos)
 
             try:
                 # Create the label based on the selected type
@@ -121,7 +116,7 @@ class ImportNetLabels(pcbnew.ActionPlugin):
 
         # Move all created labels together with the cursor for placement
         if created_labels:
-            bounding_box = pcbnew.wxRect(
+            bounding_box = eeschema.wxRect(
                 min([label.GetX() for label in created_labels]),
                 min([label.GetY() for label in created_labels]),
                 max([label.GetX() for label in created_labels]),
